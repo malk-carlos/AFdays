@@ -1,9 +1,11 @@
 function af(){
     var today = new Date();
+    var todays = today.toString().split(" ")
+    console.log(today)
     var year = today.getFullYear();
     var month = today.getMonth() + 1;
     var date =  today.getDate();
-    var data1 = `${year}年${month}月${date}日`;
+    var data1 = `${todays[0]}, ${todays[1]} ${date.toString().padStart(2, "0")}, ${year}`;
 
     if(month > 3){
         var afday = new Date(year,3,1,0,0,0,0);
@@ -22,3 +24,5 @@ function af(){
     var AFslog = document.getElementById("AFx");
     AFslog.innerHTML = data2;
 }
+
+af()

@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日はエイプリルフール何日目？</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <!-- 月ごとに背景画像を変更するスクリプト -->
+    <script language="JavaScript">
+        function pic_change(){
+            d = new Date();
+            month = d.toString().split(" ")[1];
+            document.write(`<body background="bgi/${month}.png">`);
+        }
+        pic_change();
+    </script>
 </head>
-<body onload="af()">
-    <p>今日は<span id="today"></span>、エイプリルフール<span id="AFx"></span>日目です</p>
+<body>
+    <div>
+        <p id="today"></p>
+        <p>エイプリルフール<span id="AFx"></span>日目です</p>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

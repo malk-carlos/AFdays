@@ -1,0 +1,14 @@
+div{
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+p{
+    color: white;
+    opacity: 0.8;
+    font-size: 80px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: sans-serif; /* フォントは暫定(変更予定あり) */
+    text-shadow: 0 0 10px white;
+}
