@@ -50,6 +50,9 @@ function af_change(){
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
         }
+        
+        // 各月の背景が準備でき次第コメントアウトを解除
+        // $("body").css("background-image",`url("https://github.com/malk-carlos/AFdays/blob/main/img/${todays[1].toLowerCase()}.png?raw=true")`)
 
         var log = document.getElementById("today");
         log.innerHTML = data1;
