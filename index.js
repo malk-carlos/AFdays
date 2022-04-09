@@ -7,7 +7,11 @@ function af(){
     var date =  today.getDate();
     var data1 = `${todays[0]}, ${todays[1]} ${date.toString().padStart(2, "0")}, ${year}`;
 
-    if(month > 3){
+    if(date == 1 && month == 4){
+        var afday = new Date((year-1),3,1,0,0,0,0);
+        var ms = today.getTime() - afday.getTime();
+        var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+    } else if(month > 3){
         var afday = new Date(year,3,1,0,0,0,0);
         var ms = today.getTime() - afday.getTime();
         var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
@@ -17,6 +21,11 @@ function af(){
         var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
     }
 
+    // 背景変更 (デバッグ用)
+    $("body").css("background-image",`url("img/${todays[1].toLowerCase()}.png?raw=true")`)
+
+    // 各月の背景が準備でき次第コメントアウトを解除
+    // $("body").css("background-image",`url("https://github.com/malk-carlos/AFdays/blob/main/img/${todays[1].toLowerCase()}.png?raw=true")`)
 
     var log = document.getElementById("today");
     log.innerHTML = data1;
@@ -41,7 +50,11 @@ function af_change(){
         var date =  today.getDate();
         var data1 = `${todays[0]}, ${todays[1]} ${date.toString().padStart(2, "0")}, ${year}`;
 
-        if(month > 3){
+        if(date == 1 && month == 4){
+            var afday = new Date((year-1),3,1,0,0,0,0);
+            var ms = today.getTime() - afday.getTime();
+            var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+        } else if(month > 3){
             var afday = new Date(year,3,1,0,0,0,0);
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
@@ -50,9 +63,13 @@ function af_change(){
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
         }
-        
+
+        // 背景変更 (デバッグ用)
+        $("body").css("background-image",`url("img/${todays[1].toLowerCase()}.png?raw=true")`)
+
         // 各月の背景が準備でき次第コメントアウトを解除
         // $("body").css("background-image",`url("https://github.com/malk-carlos/AFdays/blob/main/img/${todays[1].toLowerCase()}.png?raw=true")`)
+
 
         var log = document.getElementById("today");
         log.innerHTML = data1;

@@ -1,3 +1,8 @@
+body{
+    background-size: cover;
+    background-color: #333;
+}
+
 #main{
     margin-left: 5%;
     margin-top: 10%;
@@ -11,10 +16,6 @@
     font-style: italic;
     font-family: sans-serif; /* フォントは暫定(変更予定あり) */
     text-shadow: 0 0 10px white;
-}
-
-body{
-    background-size: cover;
 }
 
 #change_date{
@@ -59,6 +60,10 @@ body{
     border: none;
     border-bottom: solid 1px #fff8;
     /* opacity: 0.5; */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
 }
 
 #button{
