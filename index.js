@@ -11,14 +11,24 @@ function af(){
         var afday = new Date((year-1),3,1,0,0,0,0);
         var ms = today.getTime() - afday.getTime();
         var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+
+        // 表示する日付をランダム設定する処理
+        const WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+        const Mon = ["Jan","Feb","Mar","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        var afWD = WD[Math.floor(Math.random() * 7)];
+        var afyear = Math.floor(Math.random() * 12345);
+        var afmonth = Mon[Math.floor(Math.random() * 11)];
+        var afdate =  Math.floor(Math.random() * 100);
+        var data1 = `${afWD}, ${afmonth} ${afdate}, ${afyear}`;
+        var data2 = "エイプリルフールではありません"
     } else if(month > 3){
         var afday = new Date(year,3,1,0,0,0,0);
         var ms = today.getTime() - afday.getTime();
-        var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+        var data2 = `エイプリルフール${Math.floor(ms / (1000*24*60*60)) + 1}日目です`;
     } else {
         var afday = new Date((year-1),3,1,0,0,0,0);
         var ms = today.getTime() - afday.getTime();
-        var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+        var data2 = `エイプリルフール${Math.floor(ms / (1000*24*60*60)) + 1}日目です`;
     }
 
     // 背景変更 (デバッグ用)
@@ -54,14 +64,26 @@ function af_change(){
             var afday = new Date((year-1),3,1,0,0,0,0);
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+
+            // 表示する日付をランダム設定する処理
+            const WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+            const Mon = ["Jan","Feb","Mar","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+            var afWD = WD[Math.floor(Math.random() * 7)];
+            var afyear = Math.floor(Math.random() * 12345);
+            var afmonth = Mon[Math.floor(Math.random() * 11)];
+            var afdate =  Math.floor(Math.random() * 100);
+            var data1 = `${afWD}, ${afmonth} ${afdate}, ${afyear}`;
+            var data2 = `エイプリルフールではありません`;
         } else if(month > 3){
             var afday = new Date(year,3,1,0,0,0,0);
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+            var data2 = `エイプリルフール${Math.floor(ms / (1000*24*60*60)) + 1}日目です`;
         } else {
             var afday = new Date((year-1),3,1,0,0,0,0);
             var ms = today.getTime() - afday.getTime();
             var data2 = Math.floor(ms / (1000*24*60*60)) + 1;
+            var data2 = `エイプリルフール${Math.floor(ms / (1000*24*60*60)) + 1}日目です`;
         }
 
         // 背景変更 (デバッグ用)
